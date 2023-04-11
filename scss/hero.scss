@@ -1,0 +1,48 @@
+.hero {
+  padding-top: 300px;
+  padding-bottom: 300px;
+
+  background: url("../assets/hero-back.png");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+
+  @media (max-width: 1200px) {
+    background-position: center;
+  }
+
+  &__title {
+    font-family: $inter;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 75px;
+    text-transform: uppercase;
+    color: #292521;
+    margin-top: 0;
+    margin-bottom: 17px;
+
+    @media (max-width: 1200px) {
+      font-size: 36px;
+      line-height: 46px;
+    }
+  }
+
+  &__text {
+    font-family: $inter;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 40px;
+    color: #292521;
+    margin-top: 0;
+    margin-bottom: 30px;
+
+    @media (max-width: 1200px) {
+      font-size: 18px;
+    }
+  }
+
+  &__row {
+    max-width: 54%;
+    width: 100%;
+  }
+}

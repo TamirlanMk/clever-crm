@@ -1,0 +1,115 @@
+.about {
+  margin-bottom: 100px;
+
+  &__title {
+    margin-bottom: 120px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    flex-basis: 33.33333333%;
+    height: 250px;
+
+    z-index: 22;
+
+    &:nth-child(even) {
+      z-index: 1;
+
+      &:after {
+        content: '';
+        position: absolute;
+        width: 550px;
+        left: -25%;
+        top: -10%;
+        height: 100%;
+        background: url("../assets/about-image.svg") no-repeat center;
+        background-size: contain;
+
+        @media (max-width: 1200px) {
+          width: 450px;
+        }
+      }
+
+      .about__item-index {
+        color: rgba(255, 255, 255, 0.2);
+        z-index: 100;
+      }
+
+      .about__item-title {
+        color: rgb(255, 255, 255);
+      }
+
+      .about__item-text {
+        color: rgba(255, 255, 255, 0.7);
+      }
+    }
+
+    &:nth-child(3n+2) {
+      margin-top: 100px;
+
+      @media (max-width: 1200px) {
+        margin-top: 130px;
+      }
+    }
+
+    &:nth-child(3n+4),
+    &:nth-child(3n+6) {
+      margin-top: -40px;
+
+      @media (max-width: 1200px) {
+        margin-top: -40px;
+      }
+    }
+
+    &:nth-child(2n+7) {
+      @media (max-width: 1200px) {
+        margin-top: -100px;
+      }
+    }
+
+    &-index {
+      position: absolute;
+      font-weight: 700;
+      font-size: 120px;
+      line-height: 120px;
+      text-align: center;
+      color: rgba(124, 1, 199, 0.25);
+    }
+
+    &-content {
+      padding-right: 40px;
+      z-index: 10;
+      margin-top: 50px;
+      margin-left: 40px;
+
+      @media (max-width: 1200px) {
+        padding-right: 20px;
+      }
+    }
+
+    &-title {
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 24px;
+      color: #7C01C7;
+      margin-top: 0;
+    }
+
+    &-text {
+      margin-left: 20px;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 20px;
+      color: #7C01C7;
+    }
+  }
+
+}
