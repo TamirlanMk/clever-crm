@@ -55,6 +55,10 @@
     @media (max-width: 670px) {
       padding: 0 15px;
     }
+
+    @media (max-width: 560px) {
+      padding: 0 5px;
+    }
   }
 
   &__slide.slick-active,
@@ -71,7 +75,7 @@
 .team__slide.slick-active,
 .team__slide.slick-center {
   .slide__content {
-    background: #108A5B;
+    background: rgba(16, 138, 91, 0.75);
   }
 }
 
@@ -108,10 +112,16 @@
     background: rgba(16, 138, 91, 0.25);
 
     transition: background-color .2s ease-in-out;
+    
+    @media (max-width: 560px) {
+      margin: 0 4px;
+      width: 54px;
+      height: 4px;
+    }
   }
 
   .slick-active {
-    background: #108A5B;
+    background: rgba(16, 138, 91, 0.75);
   }
 }
 

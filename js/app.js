@@ -1,4 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
+
+    let menuBurger = document.querySelector('.menu__burger');
+    let menu = document.querySelector('.header__nav')
+
+    menuBurger.onclick = (e) => {
+        e.preventDefault();
+
+        menuBurger.classList.toggle('menu__burger--active')
+        menu.classList.toggle('nav--active')
+    }
+
     let tabsWrapper = document.querySelector('.tabs');
     let tabLinks = document.querySelectorAll('.tabs__link');
     let tabBodies = document.querySelectorAll('.tabs__body');

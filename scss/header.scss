@@ -2,6 +2,7 @@
   position: absolute;
   top: 0;
   left: 0;
+
   width: 100%;
   padding-top: 47px;
 
@@ -38,82 +39,185 @@
       position: fixed;
       top: 0;
       right: 0;
-      left: 0;
+      bottom: 0;
       width: 100%;
       display: block;
-      transform: translateX(120%);
+      z-index: 10000;
+      transform: translateX(100%);
+      max-width: 30%;
+
+      background-color: #ffffff;
+
+      -webkit-box-shadow: -4px 2px 19px -5px rgb(34 60 80 / 20%);
+      -moz-box-shadow: -4px 2px 19px -5px rgba(34, 60, 80, .2);
+      box-shadow: -4px 2px 19px -5px rgb(34 60 80 / 20%);
+      transition: transform .2s linear;
 
       .btn {
         display: none;
       }
     }
 
+    @media (max-width: 992px) {
+      max-width: 40%;
+    }
+
+    @media (max-width: 768px) {
+      max-width: 46%;
+    }
+
+    @media (max-width: 576px) {
+      max-width: 100%;
+    }
+
+    &--active {
+      transform: translateX(0%);
+    }
+
     ul {
-      padding: 0;
       list-style: none;
+
       display: flex;
       align-items: center;
       justify-content: flex-start;
 
+
       @media (max-width: 1200px) {
         flex-direction: column;
+        align-items: flex-end;
+
+        height: 100%;
+        padding: 200px 50px 40px 20px;
+      }
+
+      @media (max-width: 576px) {
+        align-items: flex-end;
+        padding: 200px 30px 40px 30px;
       }
 
       li {
+        @media (max-width: 1200px) {
+          margin-bottom: 15px;
+        }
+
         a {
           font-weight: 700;
           font-size: 16px;
           color: #292521;
           text-decoration: none;
           transition: color .2s linear, text-shadow .1s ease-in-out;
+
+          @media (max-width: 1200px) {
+            font-size: 18px;
+            color: #7C01C7;
+            text-transform: uppercase;
+          }
+
+          @media (max-width: 576px) {
+            font-size: 22px;
+          }
         }
       }
 
       li:not(:last-child) {
         margin-right: 46px;
+
+        @media (max-width: 1400px) {
+          margin-right: 20px;
+        }
+
+        @media (max-width: 1200px) {
+          margin-right: 0;
+        }
       }
     }
   }
-}
 
-.menu__burger {
-  display: none;
-  z-index: 1000;
+  .menu__burger {
+    cursor: pointer;
 
-  @media (max-width: 1200px) {
-    display: block;
+    display: none;
     position: absolute;
-    right: 50px;
-
-    transform: translateY(-50%);
     top: 75px;
+    right: 50px;
+    z-index: 10001;
+    transform: translateY(-50%);
+    width: 33px;
+    height: 33px;
+
+    @media (max-width: 576px) {
+      right: 25px;
+      top: 75px;
+    }
+
+    span:first-child {
+      transition: transform .2s ease-in-out;
+    }
+
+    span:nth-child(3) {
+      transition: transform .2s ease-in-out;
+    }
+
+    @media (max-width: 1300px) {
+      display: block;
+    }
+
+    @media (max-width: 320px) {
+      top: 67px;
+    }
+
+    span {
+      position: relative;
+      margin: 15px 0;
+      display: block;
+      width: 20px;
+      height: 3px;
+      background-color: $primary-color;
+
+      transition: background-color .4s linear;
+    }
+
+    span::after,
+    span::before {
+      position: absolute;
+      content: "";
+      display: block;
+      width: 30px;
+      height: 3px;
+      top: -10px;
+      background-color: $primary-color;
+      transition: all .2s linear;
+    }
+
+    span::after {
+      top: -10px;
+    }
+
+    span::before {
+      top: 10px;
+    }
+
+    &--active {
+      position: fixed;
+
+      span {
+        background-color: transparent;
+      }
+
+      span::after {
+        top: 0;
+        transform: rotate(-45deg);
+      }
+
+      span {
+        transform: rotate(0);
+      }
+
+      span::before {
+        top: 0;
+        transform: rotate(45deg);
+      }
+    }
   }
-}
 
-.menu__burger span {
-  width: 40px;
-  height: 3px;
-  background-color: $primary-color;
-  margin-bottom: 7px;
-  display: block;
-}
-
-.menu__burger.active {
-  position: fixed;
-  top: 57px;
-  right: 22px;
-}
-
-.menu__burger.active span:nth-child(1) {
-  transform: rotate(45deg);
-  margin: -3px 0 0 0;
-}
-
-.menu__burger.active span:nth-child(2) {
-  display: none;
-}
-
-.menu__burger.active span:nth-child(3) {
-  transform: rotate(-45deg);
-  margin: -3px 0 0 0;
 }

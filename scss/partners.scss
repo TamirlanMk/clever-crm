@@ -1,6 +1,10 @@
 .partners {
   margin-bottom: 100px;
 
+  @media (max-width: 560px) {
+    margin-bottom: 60px;
+  }
+
   &__list {
     display: flex;
     flex-direction: row;
@@ -17,6 +21,11 @@
       padding: 0 5px;
       max-width: 25%;
       width: 100%;
+
+      @media (max-width: 560px) {
+        max-width: 50%;
+        margin-bottom: 10px;
+      }
 
       &__content {
         background-color: #fafafa;
