@@ -51,8 +51,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             link.classList.add(activeClass)
             tab.classList.add(activeClassBody)
-
-
         }
     })
+
+    let sticky = new Sticky('.work__plan-row__title');
 })
