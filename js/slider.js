@@ -5,6 +5,7 @@ $('.team__slider').slick({
     slidesToShow: 1,
     infinite: true,
     speed: 300,
+    useTransform: true,
     responsive: [
         {
             breakpoint: 1300,
@@ -58,4 +59,4 @@ $('.team__slider').slick({
         "<circle cx=\"30\" cy=\"30\" r=\"30\" transform=\"rotate(-180 30 30)\" fill=\"#108A5B\"/>\n" +
         "<path d=\"M33.8579 15.7158L21.4835 28.0902C20.5072 29.0665 20.5072 30.6494 21.4835 31.6257L33.8579 44.0001\" stroke=\"black\" stroke-opacity=\"0.5\" stroke-width=\"5\" stroke-linecap=\"round\"/>\n" +
         "</svg>\n</button>"
-});
+})
